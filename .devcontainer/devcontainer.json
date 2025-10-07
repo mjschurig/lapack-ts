@@ -1,0 +1,43 @@
+{
+  "name": "LAPACK-TS Development",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-eslint",
+        "ms-vscode.test-adapter-converter",
+        "hbenl.vscode-test-explorer",
+        "kavod-io.vscode-jest-test-adapter",
+        "ms-vscode.vscode-json",
+        "yzhang.markdown-all-in-one",
+        "streetsidesoftware.code-spell-checker"
+      ],
+      "settings": {
+        "typescript.preferences.quoteStyle": "single",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": true
+        },
+        "eslint.validate": [
+          "typescript"
+        ],
+        "jest.autoRun": "watch",
+        "files.watcherExclude": {
+          "**/node_modules/**": true,
+          "**/dist/**": true,
+          "**/coverage/**": true
+        }
+      }
+    }
+  },
+  "remoteUser": "node",
+  "mounts": [
+    "source=${localWorkspaceFolder}/reference,target=/workspace/reference,type=bind,readonly"
+  ]
+}
